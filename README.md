@@ -41,6 +41,8 @@ First, we need to build **change.m** function to calculate parameters and make t
     
     %save('azymut.mat');
 
+<br>
+
  Now we have three cartesian coordinates (x, y, z) which can be iteratively recalculated back to three ellipsoidal parameters.
 
     clc
@@ -50,6 +52,8 @@ First, we need to build **change.m** function to calculate parameters and make t
 	b = a*sqrt(1-ekw);
 	deg = pi / 180;
 	rad = 180 / pi;
+
+<br>
 	
 Iterative formulas start from the h and approximation of geodetic latitude by geocentric latitude.
 
@@ -65,6 +69,8 @@ Iterative formulas start from the h and approximation of geodetic latitude by ge
 	x = (N + h1) .* cos(phi1) .* cos(lam1);
 	y = (N + h1) .* cos(phi1) .* sin(lam1);
 	z = ((1 - ekw) .* N + h1) .* sin(phi1);
+
+<br>
 
 We calculate iteratively radius of curvature in prime vertical (N) and 2 of 3 coordinates to convergencı(4-5 iterations).
 
@@ -86,6 +92,8 @@ We calculate iteratively radius of curvature in prime vertical (N) and 2 of 3 co
     h1 = h(end)
     
     longitude = change(lam)
+
+<br>
 
 Geodetic longitude (lambda) is calculated simply from **arctan(y/x)**. We consider quaters of full angle and therefore it is convenient to use function azimuth from previous exercises.
 
