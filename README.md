@@ -1,6 +1,6 @@
-# Transformation from Orbital Frame (OR) to Conventional Terrestrial Reference Frame (CT) and Observer’s frame called Horizontal (H)
+**<h1 align=center><font size = 5>Transformation from Orbital Frame (OR) to Conventional Terrestrial Reference Frame (CT) and Observer’s frame called Horizontal (H)</font></h1>**
 
-The data and information described in this repository are within the scope of the Advanced Geodesy and Geodetic Astronomy course. This course is given by **Dr. hab. inż. Wojciech Jarmołowski**. I learned a lot from him.
+<br>
 
 Calculation of the cartesian coordinates from ellipsoidal;
 
@@ -8,10 +8,25 @@ Calculation of the cartesian coordinates from ellipsoidal;
     <img height="500" src="images/cartesian.jpg"> 
 </p>
 
-Define ellipsoidal parameters first (e.g. semi-major axis a and eccentricity e). Then we select ellipsoidal parameters of an arbitary point latitude, longitude and h (high from the ground) and recalculate them to cartesan coordinates. The Geodetic Reference System 1980 (GRS 80) is used in this project. It is a geodetic reference system consisting of a global reference ellipsoid and a normal gravity model.
+$$
+\begin{pmatrix*}[c]
+  x \\
+  y \\
+  z
+\end{pmatrix*}
+ = \begin{pmatrix*}[c]
+  (N+h)\cos\phi\cos\lambda \\
+  (N+h)\cos\phi\sin\lambda \\
+  [(1-e^{2})N + h] \sin\phi
+\end{pmatrix*}$$
+
+Define ellipsoidal parameters first (e.g. semi-major axis a and eccentricity e). Then we select ellipsoidal parameters of an arbitary point latitude, longitude and h (high from the ground) and recalculate them to cartesan coordinates. The <i>Geodetic Reference System 1980 (GRS 80)</i> is used in this project. It is a geodetic reference system consisting of a global reference ellipsoid and a normal gravity model.
 
 In this project I used coorinates of the **Ankara/Turkey** (<code>phi1</code>, <code>lam1</code> and <code>h1</code>).
 
+The data and information described in this repository are within the scope of the Advanced Geodesy and Geodetic Astronomy course. This course is given by **Dr. hab. inż. Wojciech Jarmołowski**. I learned a lot from him.
+
+<br>
 
 ## Building Algorithm for the Project
 
@@ -26,7 +41,7 @@ First, we need to build **change.m** function to calculate parameters and make t
     
     %save('azymut.mat');
 
- Now we have three cartesian coordinates(x, y, z) which can be iteratively recalculated back to three ellipsoidal parameters.
+ Now we have three cartesian coordinates (x, y, z) which can be iteratively recalculated back to three ellipsoidal parameters.
 
     clc
 	a=6378137; % semi-major axis GRS80
@@ -97,6 +112,8 @@ Coordinates are saved via <code>fopen</code> at the end of the project as .txt f
     fid = fopen('ofile.txt','w');
     fprintf(fid,'%14.8f %14.8f %10.3f\n', [phi1, lam1, h1]');
     fclose('all');
+
+<br>
 
 ## Contact Me
 
