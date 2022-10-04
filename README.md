@@ -20,6 +20,8 @@ $$
   [(1-e^{2})N + h] \sin\phi
 \end{pmatrix*}$$
 
+<br>
+
 Define ellipsoidal parameters first (e.g. semi-major axis a and eccentricity e). Then we select ellipsoidal parameters of an arbitary point latitude, longitude and h (high from the ground) and recalculate them to cartesan coordinates. The <i>Geodetic Reference System 1980 (GRS 80)</i> is used in this project. It is a geodetic reference system consisting of a global reference ellipsoid and a normal gravity model.
 
 In this project I used coorinates of the **Ankara/Turkey** (<code>phi1</code>, <code>lam1</code> and <code>h1</code>).
