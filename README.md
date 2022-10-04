@@ -3,7 +3,7 @@
 <br>
 
 <p align="center">
-    <img height="500" src="images/cartesian.png"> 
+    <img height="300" src="images/cartesian.png"> 
 </p>
 
 <b>Calculation of the cartesian coordinates from ellipsoidal:</b>
