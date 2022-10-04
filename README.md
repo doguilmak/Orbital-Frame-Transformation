@@ -2,11 +2,11 @@
 
 <br>
 
-Calculation of the cartesian coordinates from ellipsoidal;
-
 <p align="center">
     <img height="500" src="images/cartesian.jpg"> 
 </p>
+
+<b>Calculation of the cartesian coordinates from ellipsoidal:</b>
 
 $$
 \begin{pmatrix*}[c]
